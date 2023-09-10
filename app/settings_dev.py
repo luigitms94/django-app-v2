@@ -12,11 +12,14 @@ SITE_DEMONYM = 'Lexpagiens'
 MINIFY_JS = MINIFY_CSS = False
 
 
-# Database
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',  # Utilisation du backend PostgreSQL avec psycopg2
+        'NAME': os.environ.get('DATABASE_NAME', 'postgre'),  
+        'USER': os.environ.get('DATABASE_USER', 'luigitms'),
+        'PASSWORD': os.environ.get('DATABASE_PASSWORD', 'Adminpatroni2023/'),
+        'HOST': os.environ.get('DATABASE_HOST', 'localhost'),
+        'PORT': os.environ.get('DATABASE_PORT', '5432'),      
     }
 }
 

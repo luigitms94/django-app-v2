@@ -19,7 +19,10 @@ DATABASES = {
         'USER': os.environ.get('DATABASE_USER', 'luigitms'),
         'PASSWORD': os.environ.get('DATABASE_PASSWORD', 'Adminpatroni2023/'),
         'HOST': os.environ.get('DATABASE_HOST', 'localhost'),
-        'PORT': os.environ.get('DATABASE_PORT', '5432'),      
+        'PORT': os.environ.get('DATABASE_PORT', '5432'),
+        'OPTIONS': {
+            'sslmode': 'require',
+        },
     }
 }
 
